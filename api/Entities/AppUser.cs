@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using api.Extensions;
 using Microsoft.AspNetCore.Identity;
 
 namespace api.Entities
@@ -25,6 +26,9 @@ namespace api.Entities
         public ICollection<Message> MessagesReceived { get; set; }
         public ICollection<AppUserRole> UserRoles { get; set; }
 
-        
+        public int GetAge()
+        {
+            return DateOfBirth.CalculateAge();
+        }
     }
 }
